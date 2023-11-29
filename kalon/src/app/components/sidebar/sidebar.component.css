@@ -1,0 +1,26 @@
+/* sidebar.component.css */
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 8px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+  
