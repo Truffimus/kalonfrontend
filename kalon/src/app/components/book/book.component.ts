@@ -11,6 +11,7 @@ export class BookComponent {
 
   @Input() book!: Book;
 
+
   constructor(private bookService: BookserviceService) {}
 
 }

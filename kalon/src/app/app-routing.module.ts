@@ -14,6 +14,16 @@ const routes: Routes = [
     path: 'addBook',
     component: AddbookComponent,
     title: 'AddBook Page'
+  },
+  {
+    path: 'assignBook',
+    component: AddbookComponent,
+    title: 'AssignBook Page'
+  },
+  {
+    path: 'returnBook',
+    component: AddbookComponent,
+    title: 'ReturnBook Page'
   }
 ];
 
