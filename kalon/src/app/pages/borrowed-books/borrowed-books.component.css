@@ -1,0 +1,12 @@
+.main-section{
+    width: 98vw;
+}
+
+
+.results{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 240px)); 
+    column-gap: 14px;
+    row-gap: 14px;
+    justify-content: space-evenly;
+}

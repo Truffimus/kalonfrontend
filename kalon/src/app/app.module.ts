@@ -14,6 +14,8 @@ import { AddbookComponent } from './pages/addbook/addbook.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomepageComponent,
     BookComponent,
     NavbarComponent,
+    BorrowedBooksComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
