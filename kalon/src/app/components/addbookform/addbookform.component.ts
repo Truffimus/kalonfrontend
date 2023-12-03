@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {  FormControl, FormControlName, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-addbookform',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AddbookformComponent {
 
+
+  addBookForm = new FormGroup({
+      title: new FormControl(''),
+      publisher: new FormControl(''),
+      author: new FormControl(''),
+      pud: new FormControl('')
+  });
 }

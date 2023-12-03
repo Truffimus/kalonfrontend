@@ -1,0 +1,63 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    color: black;
+    text-decoration-color: black;
+}
+
+.form-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+}
+
+.list-rental form h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18pt;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  
+  label, input {
+    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: transparent;
+    
+  }
+  label {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: 12pt;
+    padding-left: 2px;
+    padding-top: 6px;
+  }
+
+  span{
+    color: rgba(255, 0, 0, 0.89);
+  }
+
+  .house-details input {
+    margin-left: 2px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 4px;
+    font-size: 12pt;
+    border-color: black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid .3px;
+    width: 300px;
+    background-color: transparent;
+    color: grey;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  input:focus-visible{
+    border: solid .1px;
+  }
