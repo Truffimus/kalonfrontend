@@ -7,14 +7,5 @@
     
         <p>Publisher: {{ book.publisher }}</p>
     </div>
-    <form (submit)="onAddBook(titleInput.value, authorInput.value)">
-    <label for="title">Title:</label>
-    <input type="text" id="title" #titleInput required>
-  
-    <label for="author">Author:</label>
-    <input type="text" id="author" #authorInput required>
-  
-    <button type="submit">Add Book</button>
-  </form>
   
 </section>

@@ -20,5 +20,96 @@ private bookurl = "http://localhost:8080/api/viewbooks";
     return this.http.post<Book>(this.addbookurl, newBook);
   }
 
+  getAllBooks2(): Book[] {
+    return this.bookList2;
+  }
+
+  bookList2: Book[] = [
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    },
+    {
+      title: "The Man, The Myth",
+      edition: "3rd Edition",
+      author: "Ken Walibora",
+      publisher: "Macmillan",
+      publicationDate: "20-12-2023",
+    }
+  ];
+
   constructor(private http: HttpClient) { }
 }

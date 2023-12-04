@@ -14,6 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 import { AddbookformComponent } from './components/addbookform/addbookform.component';
+import { LoginpageComponent } from './pages/loginpage/loginpage.component';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +29,19 @@ import { AddbookformComponent } from './components/addbookform/addbookform.compo
     BookComponent,
     NavbarComponent,
     BorrowedBooksComponent,
-    AddbookformComponent
+    AddbookformComponent,
+    LoginpageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ButtonModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

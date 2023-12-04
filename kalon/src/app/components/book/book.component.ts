@@ -13,26 +13,27 @@ export class BookComponent {
 
 
   constructor(private bookService: BookserviceService) {}
-  onAddBook(title: string, author: string): void {
-    const newBook: Book = {
-      title: 'string',
-      edition: 'string', 
-      author: 'string',
-      publisher: 'string',
-      publicationDate: new Date() 
-    };
+  // onAddBook(title: string, author: string): void {
+  //   const newBook: Book = {
+  //     title: 'string',
+  //     edition: 'string', 
+  //     author: 'string',
+  //     publisher: 'string',
+  //     publicationDate: new Date() 
+  //   };
 
-    this.bookService.addBook(newBook).subscribe(
-      (addedBook) => {
-        console.log('Book added successfully:', addedBook);
-        // You can perform additional actions after successfully adding a book
-      },
-      (error) => {
-        console.error('Error adding book:', error);
-        // Handle errors here
-      }
-    );
-  }
+  //   this.bookService.addBook(newBook).subscribe(
+  //     (addedBook) => {
+  //       console.log('Book added successfully:', addedBook);
+  //       // You can perform additional actions after successfully adding a book
+  //     },
+  //     (error) => {
+  //       console.error('Error adding book:', error);
+  //       // Handle errors here
+  //     }
+  //   );
+  // }
+
   resetForm(): void {
     const newBook = { title: '', author: '' };
   }

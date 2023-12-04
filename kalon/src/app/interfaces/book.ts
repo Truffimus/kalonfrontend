@@ -3,12 +3,6 @@ export interface Book {
     edition:         string;
     author:          string;
     publisher:       string;
-    publicationDate: Date;
+    publicationDate: string;
 }
-export interface Book {
-    title:           string;
-    edition:         string;
-    author:          string;
-    publisher:       string;
-    publicationDate: Date;
-}
+
