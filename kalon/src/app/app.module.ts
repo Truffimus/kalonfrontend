@@ -16,9 +16,13 @@ import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.co
 import { AddbookformComponent } from './components/addbookform/addbookform.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
+import { BorrowedBookComponent } from './components/borrowed-book/borrowed-book.component';
+import { AdminpageComponent } from './pages/adminpage/adminpage.component';
+import {StyleClassModule} from 'primeng/styleclass';
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,9 @@ import { CheckboxModule } from 'primeng/checkbox';
     BorrowedBooksComponent,
     AddbookformComponent,
     LoginpageComponent,
-    LoginComponent
+    LoginComponent,
+    BorrowedBookComponent,
+    AdminpageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,9 @@ import { CheckboxModule } from 'primeng/checkbox';
     HttpClientModule,
     FormsModule,
     ButtonModule,
-    CheckboxModule
+    CheckboxModule,
+    StyleClassModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

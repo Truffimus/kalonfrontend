@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Book } from 'src/app/interfaces/book';
 import { BookserviceService } from 'src/app/services/bookservice/bookservice.service';
 
@@ -9,8 +9,11 @@ import { BookserviceService } from 'src/app/services/bookservice/bookservice.ser
 })
 export class BorrowedBooksComponent implements OnInit {
   bookList: Book[] = [];
+  bookList2: Book[] = [];
 
-  constructor(private bookService: BookserviceService) {}
+  constructor(private bookService: BookserviceService) {
+    this.bookList2 = this.bookService.getAllBooks2()
+  }
   ngOnInit(): void{
     this.getAllBooks();
   }

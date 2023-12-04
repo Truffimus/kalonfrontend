@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./viewbook.component.css']
 })
 export class ViewbookComponent {
+    
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log("ngoninit");
+
+  }
+
+  notWishlist: number = 0;
+
+  toggleWishlist(toggle: number){
+    switch(toggle){
+      case 0: 
+        this.notWishlist = 0;
+        break;
+      case 1: 
+        this.notWishlist = 1;
+        break;
+    }
+  }
 
 }

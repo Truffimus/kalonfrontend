@@ -4,6 +4,8 @@ import { ViewbookComponent } from './pages/viewbook/viewbook.component';
 import { AddbookComponent } from './pages/addbook/addbook.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
+import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
+import { AdminpageComponent } from './pages/adminpage/adminpage.component';
 
 const routes: Routes = [
   {
@@ -22,9 +24,9 @@ const routes: Routes = [
     title: 'AssignBook Page'
   },
   {
-    path: 'returnBook',
-    component: AddbookComponent,
-    title: 'ReturnBook Page'
+    path: 'borrowedBook',
+    component: BorrowedBooksComponent,
+    title: 'BorrowedBook Page'
   },
   {
     path: 'bookDetails',
@@ -35,6 +37,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginpageComponent,
     title: 'Login Page'
+  },
+  {
+    path: 'admin',
+    component: AdminpageComponent,
+    title: 'Admin Page'
   }
 ];
 
