@@ -11,7 +11,7 @@ import { AddbookComponent } from './pages/addbook/addbook.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 import { AddbookformComponent } from './components/addbookform/addbookform.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
@@ -23,6 +23,7 @@ import { BorrowedBookComponent } from './components/borrowed-book/borrowed-book.
 import { AdminpageComponent } from './pages/adminpage/adminpage.component';
 import {StyleClassModule} from 'primeng/styleclass';
 import { InputTextModule } from 'primeng/inputtext';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     CheckboxModule,
     StyleClassModule,
-    InputTextModule
+    InputTextModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

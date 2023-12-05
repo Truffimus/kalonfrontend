@@ -1,1 +1,53 @@
-<p>adminpage works!</p>
+<section class="main-section">
+    <div class="sidebar">
+        <ul>
+          <li><a (click)="myMethod(0)">Add Book</a></li>
+          <li><a (click)="myMethod(1)">Edit Book</a></li>
+          <li><a (click)="myMethod(2)">Delete Book</a></li>
+          <li><a (click)="myMethod(3)">Assign Book</a></li>
+          <li><a (click)="myMethod(4)">Return Book</a></li>
+        </ul>
+    </div>
+    <div class="body">
+        <div [ngSwitch]="page" >
+            <div *ngSwitchCase = '0' class="body-item">
+                
+                <form formGroup="addBookForm">
+                    <div class="form-details">
+                    <h2>Add Book</h2>
+                        <label for="book-name">Book Title <span>&#42;</span></label>
+                        <input id="book-name" type="text" formControlName="title" placeholder="Steps to Christ" required>
+                
+                        <label for="book-location">Publisher  <span>&#42;</span></label>
+                        <input id="book-location" type="text" formControlName="publisher" placeholder="Macmillan" required>
+                
+                        <label for="book-type">Author  <span>&#42;</span></label>
+                        <input id="book-type" type="text" formControlName="author" placeholder="E.G White" required>
+                
+
+                        <label for="price">Publication date <span>&#42;</span></label>
+                        <input id="price" type="number" formControlName="pud" placeholder="02-03-2000" required>
+                
+                        </div>
+                </form>
+
+                
+            </div>
+            <div *ngSwitchCase = '1' class="body-item">
+                <h3>Edit Book</h3>
+            </div>
+            <div *ngSwitchCase = '2' class="body-item">
+                <h3>Delete Book</h3>
+            </div>
+            <div *ngSwitchCase = '3' class="body-item">
+                <h3>Assign Book</h3>
+            </div>
+            <div *ngSwitchCase = '4' class="body-item">
+                <h3>Return Book</h3>
+            </div>
+    
+        </div>
+
+    </div>
+    
+</section>
