@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { BookserviceService } from 'src/app/services/bookservice/bookservice.service';
 
 @Component({
   selector: 'app-adminpage',
@@ -8,14 +10,31 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AdminpageComponent {
 
-  constructor() {}
+  constructor(private bookService: BookserviceService) {}
 
   addBookForm = new FormGroup({
     title: new FormControl(''),
     publisher: new FormControl(''),
+    edition: new FormControl(''),
     author: new FormControl(''),
     pud: new FormControl('')
   });
+
+  addBook(addBookForm: FormGroup) {
+    console.log("Request values " + addBookForm.value )
+    this.bookService.addBook(addBookForm.value).subscribe(
+      (res) => {
+        console.log("Response " + res)
+
+        alert('Book Added Successfully');
+        
+      },
+      (error: HttpErrorResponse) => {
+        console.log("Error Response " + error.message)
+        alert('Operation Failed')
+      }
+    )
+  }
 
   public page = 0;
 

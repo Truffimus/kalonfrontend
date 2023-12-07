@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
   }
   
   public getAllBooks() {
-    this.bookService.getAllBooks().subscribe(
+    this.bookService.getAvailableBooks().subscribe(
       (response: Book[]) => {
         this.bookList = response;
         console.log(response)

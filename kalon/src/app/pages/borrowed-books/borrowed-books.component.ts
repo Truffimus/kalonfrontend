@@ -19,7 +19,7 @@ export class BorrowedBooksComponent implements OnInit {
   }
   
   public getAllBooks() {
-    this.bookService.getAllBooks().subscribe(
+    this.bookService.getBorrowedBooks().subscribe(
       (response: Book[]) => {
         this.bookList = response;
         console.log(response)

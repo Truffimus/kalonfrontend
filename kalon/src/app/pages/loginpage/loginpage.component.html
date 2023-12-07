@@ -1,14 +1,7 @@
-<section class="main-section">
-    <section>
-
-  
-        <section class="main-page">
-          <img class="house"
-              alt="Nomad logo"
-              src="assets/signinhouse.svg" />
+<section class="main-page">
           <section class="sign-up">
             <h2 class="section-heading">Sign In</h2>
-            <form formGroup="loginForm" >
+            <form [formGroup]="loginForm" >
               <label for="user-name">Username or Email</label>
               <input id="user-name" type="text" formControlName="username" placeholder="username or email" required>
     
@@ -24,8 +17,7 @@
             </p>
           </section>
           
-        </section>
-        
-        </section>
 </section>
+        
+
 

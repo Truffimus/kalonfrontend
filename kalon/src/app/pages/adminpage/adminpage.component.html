@@ -12,8 +12,8 @@
         <div [ngSwitch]="page" >
             <div *ngSwitchCase = '0' class="body-item">
                 
-                <form formGroup="addBookForm">
-                    <div class="form-details">
+                <form [formGroup]="addBookForm" (submit)="addBook(addBookForm)">
+                    <div class="book-details">
                     <h2>Add Book</h2>
                         <label for="book-name">Book Title <span>&#42;</span></label>
                         <input id="book-name" type="text" formControlName="title" placeholder="Steps to Christ" required>
@@ -24,10 +24,13 @@
                         <label for="book-type">Author  <span>&#42;</span></label>
                         <input id="book-type" type="text" formControlName="author" placeholder="E.G White" required>
                 
+                        <label for="book-type">Edition  <span>&#42;</span></label>
+                        <input id="book-edition" type="text" formControlName="edition" placeholder="2" required>
 
                         <label for="price">Publication date <span>&#42;</span></label>
                         <input id="price" type="number" formControlName="pud" placeholder="02-03-2000" required>
                 
+                        <button type="submit">Add Book</button>
                         </div>
                 </form>
 
@@ -35,6 +38,7 @@
             </div>
             <div *ngSwitchCase = '1' class="body-item">
                 <h3>Edit Book</h3>
+
             </div>
             <div *ngSwitchCase = '2' class="body-item">
                 <h3>Delete Book</h3>

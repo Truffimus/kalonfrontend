@@ -50,11 +50,11 @@
 /* Add book form styling */
 
 
-.form-details{
+.book-details{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    width: 90vw;
+    width: 40vw;
 }
 
 .list-rental form h2 {
@@ -102,4 +102,14 @@
 
   input:focus-visible{
     border: solid .1px;
+  }
+
+  .book-details button{
+    margin: 20px 16px 0 0px;
+    height: 40px;
+    width: 120px;
+    background-color: #7393B3;
+    border-radius: 10px;
+    border-color: #7393B3;
+    color: white;
   }

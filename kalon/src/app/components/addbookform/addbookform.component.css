@@ -10,9 +10,9 @@
 
 .form-details{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    width: 90vw;
+    align-items: center;
 }
 
 .list-rental form h2 {

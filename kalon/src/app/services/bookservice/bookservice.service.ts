@@ -8,13 +8,19 @@ import { Book } from 'src/app/interfaces/book';
 })
 export class BookserviceService {
 
-private bookurl = "http://localhost:8080/api/viewbooks";
+private borrowBookurl = "http://localhost:8081/api/viewBorrowedBooks";
 
-private addbookurl = "http://localhost:8080/api/addbooks";
+private availableBookurl = "http://localhost:8081/api/viewAvailableBooks";
+
+private addbookurl = "http://localhost:8081/api/addbooks";
 
 
-  getAllBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.bookurl);
+  getBorrowedBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(this.borrowBookurl);
+  }
+
+  getAvailableBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(this.availableBookurl);
   }
  
 

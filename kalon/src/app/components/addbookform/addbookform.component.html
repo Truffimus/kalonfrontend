@@ -1,20 +1,27 @@
 <section class="my-form">
-    <form formGroup="addBookForm">
+    <form [formGroup]="addBookForm">
         <div class="form-details">
         <h2>Add Book</h2>
-            <label for="house-name">Book Title <span>&#42;</span></label>
-            <input id="house-name" type="text" formControlName="title" placeholder="Steps to Christ" required>
-    
-            <label for="house-location">Publisher  <span>&#42;</span></label>
-            <input id="house-location" type="text" formControlName="publisher" placeholder="Macmillan" required>
-    
-            <label for="house-type">Author  <span>&#42;</span></label>
-            <input id="house-type" type="text" formControlName="author" placeholder="E.G White" required>
-    
+            <div class="input-item">
+                <label for="house-name">Book Title <span>&#42;</span></label>
+                <input id="house-name" type="text" formControlName="title" placeholder="Steps to Christ" required>
+            </div>
 
-            <label for="price">Publication date <span>&#42;</span></label>
-            <input id="price" type="number" formControlName="pud" placeholder="02-03-2000" required>
-    
+            <div class="input-item">
+                <label for="house-location">Publisher  <span>&#42;</span></label>
+                <input id="house-location" type="text" formControlName="publisher" placeholder="Macmillan" required>
+            </div>
+
+            <div class="input-item">
+                <label for="house-type">Author  <span>&#42;</span></label>
+                <input id="house-type" type="text" formControlName="author" placeholder="E.G White" required>
+            </div>
+            
+            <div class="input-item">
+                <label for="price">Publication date <span>&#42;</span></label>
+                <input id="price" type="number" formControlName="pud" placeholder="02-03-2000" required>
+            </div>
+            
             </div>
             </form>
 <section>

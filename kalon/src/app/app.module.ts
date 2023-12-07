@@ -11,7 +11,7 @@ import { AddbookComponent } from './pages/addbook/addbook.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 import { AddbookformComponent } from './components/addbookform/addbookform.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
@@ -47,6 +47,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ButtonModule,
     CheckboxModule,
     StyleClassModule,
