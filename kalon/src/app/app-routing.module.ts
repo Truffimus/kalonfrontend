@@ -6,6 +6,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 import { AdminpageComponent } from './pages/adminpage/adminpage.component';
+import { RegisterpageComponent } from './pages/registerpage/registerpage.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginpageComponent,
     title: 'Login Page'
+  },
+  {
+    path: 'register',
+    component: RegisterpageComponent,
+    title: 'Register Page'
   },
   {
     path: 'admin',

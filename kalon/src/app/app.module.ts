@@ -11,12 +11,11 @@ import { AddbookComponent } from './pages/addbook/addbook.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
 import { AddbookformComponent } from './components/addbookform/addbookform.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { BorrowedBookComponent } from './components/borrowed-book/borrowed-book.component';
@@ -24,6 +23,7 @@ import { AdminpageComponent } from './pages/adminpage/adminpage.component';
 import {StyleClassModule} from 'primeng/styleclass';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
+import { RegisterpageComponent } from './pages/registerpage/registerpage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,9 +36,9 @@ import { CommonModule } from '@angular/common';
     BorrowedBooksComponent,
     AddbookformComponent,
     LoginpageComponent,
-    LoginComponent,
     BorrowedBookComponent,
-    AdminpageComponent
+    AdminpageComponent,
+    RegisterpageComponent
   ],
   imports: [
     BrowserModule,
