@@ -17,6 +17,11 @@
       <a routerLink="/borrowedBook">
         <p>Borrowed Books</p>
       </a>
-      <button routerLink="/login">Sign In</button>
+      <div *ngIf="logged_user; else loggedOut">
+        <button class="profile">P</button>
+      </div>
+      <ng-template #loggedOut>
+        <button routerLink="/login">Sign In</button>
+      </ng-template>
       
 </div>

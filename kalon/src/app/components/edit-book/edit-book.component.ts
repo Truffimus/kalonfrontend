@@ -6,14 +6,14 @@ import { BookserviceService } from 'src/app/services/bookservice/bookservice.ser
 import { JWTServiceService } from 'src/app/services/jwtservice/jwtservice.service';
 
 @Component({
-  selector: 'app-borrowed-book',
-  templateUrl: './borrowed-book.component.html',
-  styleUrls: ['./borrowed-book.component.css']
+  selector: 'app-edit-book',
+  templateUrl: './edit-book.component.html',
+  styleUrls: ['./edit-book.component.css']
 })
-export class BorrowedBookComponent {
+export class EditBookComponent {
 
-  
-  @Input() book2!: Book;
+   
+  @Input() book3!: Book;
 
 
   constructor(private bookService: BookserviceService, private jwtService: JWTServiceService, private routes: Router) {}
@@ -45,5 +45,5 @@ export class BorrowedBookComponent {
     } else { this.routes.navigateByUrl('/login');}
     
   }
- 
+
 }

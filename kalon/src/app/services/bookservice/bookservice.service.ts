@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Book } from 'src/app/interfaces/book';
+import { Booking } from 'src/app/interfaces/booking';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,13 @@ private borrowBookurl = "http://localhost:8081/api/viewBorrowedBooks";
 
 private availableBookurl = "http://localhost:8081/api/viewAvailableBooks";
 
-private addbookurl = "http://localhost:8081/api/addbooks";
+private addBookurl = "http://localhost:8081/api/addbook";
 
+private assignBookurl = "http://localhost:8081/api/assignbook";
+
+private returnBookurl = "http://localhost:8081/api/returnbook";
+
+private getBookDetailsurl = "http://localhost:8081/api/bookdetails/";
 
   getBorrowedBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.borrowBookurl);
@@ -22,102 +28,23 @@ private addbookurl = "http://localhost:8081/api/addbooks";
   getAvailableBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.availableBookurl);
   }
+
+  getBookDetailsById(id: number): Observable<Book> {
+    return this.http.get<Book>(`${this.getBookDetailsurl+id}`)
+  }
  
 
   addBook(newBook: Book): Observable<Book> {
-    return this.http.post<Book>(this.addbookurl, newBook);
+    return this.http.post<Book>(this.addBookurl, newBook);
   }
 
-  getAllBooks2(): Book[] {
-    return this.bookList2;
+  assignBook(booking: Booking): Observable<Book> {
+    return this.http.patch<Book>(`${this.assignBookurl}`, booking);
   }
 
-  bookList2: Book[] = [
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    },
-    {
-      title: "The Man, The Myth",
-      edition: "3rd Edition",
-      author: "Ken Walibora",
-      publisher: "Macmillan",
-      publicationDate: "20-12-2023",
-    }
-  ];
+  returnBook(booking: Booking): Observable<Book> {
+    return this.http.patch<Book>(`${this.returnBookurl}`, booking);
+  }
 
   constructor(private http: HttpClient) { }
 }

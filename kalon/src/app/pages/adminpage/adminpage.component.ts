@@ -1,7 +1,11 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Book } from 'src/app/interfaces/book';
+import { User } from 'src/app/interfaces/user';
 import { BookserviceService } from 'src/app/services/bookservice/bookservice.service';
+import { JWTServiceService } from 'src/app/services/jwtservice/jwtservice.service';
 
 @Component({
   selector: 'app-adminpage',
@@ -10,7 +14,33 @@ import { BookserviceService } from 'src/app/services/bookservice/bookservice.ser
 })
 export class AdminpageComponent {
 
-  constructor(private bookService: BookserviceService) {}
+  constructor(private bookService: BookserviceService, private jwtService: JWTServiceService, private routes: Router) {}
+
+
+  bookList: Book[] = [];
+
+  ngOnInit(): void{
+    this.getAllBooks();
+  }
+
+  logout(){
+    this.jwtService.logout();
+
+    this.routes.navigate(['/'])
+          .then(() => {
+              window.location.reload();
+    });
+
+  }
+
+  user: User = {
+    id:  Number(this.jwtService.getUserId()),
+    name: this.jwtService.getUserName(),
+    firstName: this.jwtService.getUserName(),
+    lastName: this.jwtService.getUserName(),
+    email: this.jwtService.getEmailId(),
+    password: '',
+  }
 
   addBookForm = new FormGroup({
     title: new FormControl(''),
@@ -32,6 +62,15 @@ export class AdminpageComponent {
       (error: HttpErrorResponse) => {
         console.log("Error Response " + error.message)
         alert('Operation Failed')
+      }
+    )
+  }
+  
+  public getAllBooks() {
+    this.bookService.getAvailableBooks().subscribe(
+      (response: Book[]) => {
+        this.bookList = response;
+        console.log(response)
       }
     )
   }
@@ -58,8 +97,11 @@ export class AdminpageComponent {
       case 4: 
         this.page = 4;
         break;
+      case 5: 
+        this.page = 5;
+        break;
       default:
-        this.page = 0
+        this.page = 5
         break;
 
     }

@@ -6,20 +6,17 @@
             <img class="book-photo"  src="assets/image/book1.jpg"
             alt="Exterior photo of "/>
           </div>
-          
-        
-        
       </section>
       
       <section class="desc">
       <div class="desc-heading">
-        <h3 class="book-heading">A Book Full of Hope</h3>
+        <h3 class="book-heading">{{book.title}}</h3>
         <div class="book-details">
         <div class="data">
-            <p class="book-data"><b>Publisher:</b> Title </p>
-            <p class="book-data"><b>Author:</b> My Book </p>
-            <p class="book-data"><b>Edition:</b> My Book </p>
-            <p class="book-data"><b>Publishing Date:</b> My Book </p>
+            <p class="book-data"><b>Publisher:</b> {{book.publisher}} </p>
+            <p class="book-data"><b>Author:</b> {{book.author}} </p>
+            <p class="book-data"><b>Edition:</b> {{ book.edition }} </p>
+            <p class="book-data"><b>Publishing Date:</b> {{book.publicationDate }} </p>
           </div>
         </div>
         
@@ -39,7 +36,7 @@
       
         
       <div class="action-area">
-        <button >Borrow</button>    
+        <button (click)="assignBook()">Borrow</button>    
         </div>
 
       </section>

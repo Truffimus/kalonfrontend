@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JWTServiceService } from 'src/app/services/jwtservice/jwtservice.service';
 
 
 @Component({
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  constructor(private jwtService: JWTServiceService){}
+ 
+
+  show: boolean = false;
+
+
+  logged_user: boolean = this.jwtService.isLoggedIn();
 }

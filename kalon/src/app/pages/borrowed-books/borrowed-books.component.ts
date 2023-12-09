@@ -9,10 +9,8 @@ import { BookserviceService } from 'src/app/services/bookservice/bookservice.ser
 })
 export class BorrowedBooksComponent implements OnInit {
   bookList: Book[] = [];
-  bookList2: Book[] = [];
 
   constructor(private bookService: BookserviceService) {
-    this.bookList2 = this.bookService.getAllBooks2()
   }
   ngOnInit(): void{
     this.getAllBooks();

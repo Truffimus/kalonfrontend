@@ -1,6 +1,6 @@
 <section class="main-section">
     <img src="assets/image/book1.jpg" alt="Book Cover" class="book-cover">
-    <div routerLink="/bookDetails">
+    <div>
         <div class="book-details">
             <h3 id="title">Title: <b>{{ book2.title }}</b></h3>
     
@@ -8,7 +8,7 @@
         
             <p>Publisher: {{ book2.publisher }}</p>
     
-            <button>Return</button>
+            <button (click)="returnBook(book2.id)">Return</button>
         </div>
       
     </div>

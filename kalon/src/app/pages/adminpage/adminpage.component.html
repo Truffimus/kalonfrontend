@@ -1,6 +1,7 @@
 <section class="main-section">
     <div class="sidebar">
         <ul>
+          <li><a (click)="myMethod(5)">My Account</a></li>
           <li><a (click)="myMethod(0)">Add Book</a></li>
           <li><a (click)="myMethod(1)">Edit Book</a></li>
           <li><a (click)="myMethod(2)">Delete Book</a></li>
@@ -10,6 +11,18 @@
     </div>
     <div class="body">
         <div [ngSwitch]="page" >
+            <div *ngSwitchCase = '5' class="body-item">
+                <h2>My Account</h2>
+                <div class="user-biodata">
+                    <p>Username: <b> {{user.name}}</b></p>
+                    <p>Full Name: <b> {{user.firstName + "  " + user.lastName}}</b></p>
+                    <p>Email: <b> {{user.email}}</b></p>
+                    <button  (click)="logout()" type="submit">Sign Out</button>
+                </div>      
+             
+
+                
+            </div>
             <div *ngSwitchCase = '0' class="body-item">
                 
                 <form [formGroup]="addBookForm" (submit)="addBook(addBookForm)">
@@ -38,10 +51,19 @@
             </div>
             <div *ngSwitchCase = '1' class="body-item">
                 <h3>Edit Book</h3>
-
+                <div class="results">
+                    <app-edit-book
+                        *ngFor="let book of bookList" [book3]="book"
+                    ></app-edit-book>
+                </div>
             </div>
             <div *ngSwitchCase = '2' class="body-item">
                 <h3>Delete Book</h3>
+                <div class="results">
+                    <app-delete-book
+                        *ngFor="let book of bookList" [book4]="book"
+                    ></app-delete-book>
+                </div>
             </div>
             <div *ngSwitchCase = '3' class="body-item">
                 <h3>Assign Book</h3>

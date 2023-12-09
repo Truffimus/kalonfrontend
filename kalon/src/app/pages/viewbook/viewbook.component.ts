@@ -1,5 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Book } from 'src/app/interfaces/book';
+import { BookserviceService } from 'src/app/services/bookservice/bookservice.service';
+import { JWTServiceService } from 'src/app/services/jwtservice/jwtservice.service';
 
 @Component({
   selector: 'app-viewbook',
@@ -8,24 +12,57 @@ import { Component } from '@angular/core';
 })
 export class ViewbookComponent {
     
-  constructor() { }
+  constructor(private bookService: BookserviceService, private jwtService: JWTServiceService, private routes: Router) { }
+
+  route: ActivatedRoute = inject(ActivatedRoute);
+  book!: Book;
 
   ngOnInit(): void {
     console.log("ngoninit");
-
+    this.getHouseDetails();
   }
 
-  notWishlist: number = 0;
+  public getHouseDetails(){
+    const bookId = Number(this.route.snapshot.params['id']);
+    this.bookService.getBookDetailsById(bookId).subscribe(
+      (response: Book) => {
+        this.book = response;
+        console.log(response)
+        
+      },
+      (error: HttpErrorResponse) => {
+        console.log("This is the error message: "+error.message);
+        alert(error.message)
+      }
+    );
+  }
 
-  toggleWishlist(toggle: number){
-    switch(toggle){
-      case 0: 
-        this.notWishlist = 0;
-        break;
-      case 1: 
-        this.notWishlist = 1;
-        break;
-    }
+  public assignBook(){
+    if(this.jwtService.isLoggedIn()){
+
+      const userEmail = this.jwtService.getEmailId();
+
+      console.log("This is my user email "  + userEmail)
+      console.log("This is the book Id "  + Number(this.route.snapshot.params['id']))
+
+      let booking = {
+        bookId: Number(this.route.snapshot.params['id']),
+        memberEmail: userEmail,
+      }
+      
+      this.bookService.assignBook(booking).subscribe(
+        (res: any) => {
+          console.log(res);
+          alert('Book assigned Succesfully')
+        },
+        (error: HttpErrorResponse) => {
+          console.log("Error Response " + error.error.message)
+          alert('Book Failed to be assigned: ' + error.error.message)
+        }
+      )
+
+    } else { this.routes.navigateByUrl('/login');}
+    
   }
 
 }
