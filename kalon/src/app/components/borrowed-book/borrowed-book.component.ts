@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/interfaces/book';
+import { Borrow } from 'src/app/interfaces/borrow';
 import { BookserviceService } from 'src/app/services/bookservice/bookservice.service';
 import { JWTServiceService } from 'src/app/services/jwtservice/jwtservice.service';
 
@@ -32,9 +33,12 @@ export class BorrowedBookComponent {
       }
       
       this.bookService.returnBook(booking).subscribe(
-        (res: any) => {
+        (res: Borrow) => {
           console.log(res);
           alert('Book Returned Succesfully')
+          
+          window.location.reload();
+        
         },
         (error: HttpErrorResponse) => {
           console.log("Error Response " + error.error.message)

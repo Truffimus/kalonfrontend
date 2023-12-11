@@ -18,7 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { BorrowedBookComponent } from './components/borrowed-book/borrowed-book.component';
 import { AdminpageComponent } from './pages/adminpage/adminpage.component';
-import {StyleClassModule} from 'primeng/styleclass';
+import { StyleClassModule } from 'primeng/styleclass';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { RegisterpageComponent } from './pages/registerpage/registerpage.component';

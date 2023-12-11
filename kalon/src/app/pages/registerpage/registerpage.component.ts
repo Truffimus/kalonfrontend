@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
+import { Userdto } from 'src/app/interfaces/userdto';
 import { AuthserviceService } from 'src/app/services/authservice/authservice.service';
 import { JWTServiceService } from 'src/app/services/jwtservice/jwtservice.service';
 
@@ -15,14 +16,15 @@ export class RegisterpageComponent {
   constructor(private authService: AuthserviceService, private jwtService: JWTServiceService, private routes: Router) {}
   
   registerForm = new FormGroup({
-    username: new FormControl('', Validators.required),
-    fname: new FormControl('', Validators.required),
-    lname: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
+    name: new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl('')
   });
 
   signUp(registerForm: FormGroup) {
+    console.log("Request values " + registerForm.value )
     this.authService.registerUser(registerForm.value).subscribe(
       (res: User) => {
         console.log(res)
@@ -30,7 +32,7 @@ export class RegisterpageComponent {
       },
       (error: HttpErrorResponse) => {
         console.log(error.message);
-        alert('User registration failed');
+        alert('User registration failed' + error.message);
       }
     )
   }

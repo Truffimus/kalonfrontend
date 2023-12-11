@@ -47,18 +47,17 @@
 }
 
 .user-biodata{
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 .user-biodata button{
-  width: 100px;
-  height: 30px;
-  margin-top: 20px;
-  margin-right: 40px;
-  color: white;
-  background-color: #0077BA;
-  border-color: #0077BA;
+  margin: 20px 16px 0 0px;
+  height: 40px;
+  width: 120px;
+  background-color: #7393B3;
   border-radius: 10px;
+  border-color: #7393B3;
+  color: white;
 }
 
 
@@ -97,6 +96,10 @@
     color: rgba(255, 0, 0, 0.89);
   }
 
+  .alert{
+    color: rgba(255, 0, 0, 0.89);
+  }
+
   .book-details input {
     margin-left: 2px;
     margin-top: 6px;
@@ -130,6 +133,10 @@
   }
 
   /* Edit and delete book styling */
+
+  .main-section{
+    width: 60vw;
+  }
 
   .results{
     display: grid;

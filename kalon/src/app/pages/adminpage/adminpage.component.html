@@ -5,8 +5,8 @@
           <li><a (click)="myMethod(0)">Add Book</a></li>
           <li><a (click)="myMethod(1)">Edit Book</a></li>
           <li><a (click)="myMethod(2)">Delete Book</a></li>
-          <li><a (click)="myMethod(3)">Assign Book</a></li>
-          <li><a (click)="myMethod(4)">Return Book</a></li>
+          <!-- <li><a (click)="myMethod(3)">Assign Book</a></li>
+          <li><a (click)="myMethod(4)">Return Book</a></li> -->
         </ul>
     </div>
     <div class="body">
@@ -25,24 +25,50 @@
             </div>
             <div *ngSwitchCase = '0' class="body-item">
                 
-                <form [formGroup]="addBookForm" (submit)="addBook(addBookForm)">
+                <form [formGroup]="addBookForm" (ngSubmit)="addBook(addBookForm)">
                     <div class="book-details">
                     <h2>Add Book</h2>
                         <label for="book-name">Book Title <span>&#42;</span></label>
-                        <input id="book-name" type="text" formControlName="title" placeholder="Steps to Christ" required>
+                        <input type="text" id="title" class="form-control" formControlName="title" placeholder="Steps To Christ"
+                                required minlength="4" >
+                                <div *ngIf="addBookForm.controls['title'].invalid && (addBookForm.controls['title'].dirty || addBookForm.controls['title'].touched)" class="alert">
+                                    <div *ngIf="addBookForm.controls['title'].errors">
+                                    Title is required.
+                                  </div>
+                                </div>
                 
                         <label for="book-location">Publisher  <span>&#42;</span></label>
                         <input id="book-location" type="text" formControlName="publisher" placeholder="Macmillan" required>
-                
+                        <div *ngIf="addBookForm.controls['publisher'].invalid && (addBookForm.controls['publisher'].dirty || addBookForm.controls['publisher'].touched)" class="alert">
+                            <div *ngIf="addBookForm.controls['publisher'].errors">
+                            Publisher required.
+                          </div>
+                        </div>
+
                         <label for="book-type">Author  <span>&#42;</span></label>
                         <input id="book-type" type="text" formControlName="author" placeholder="E.G White" required>
-                
+                        <div *ngIf="addBookForm.controls['author'].invalid && (addBookForm.controls['author'].dirty || addBookForm.controls['author'].touched)" class="alert">
+                                    <div *ngIf="addBookForm.controls['author'].errors">
+                                    Author is required.
+                                  </div>
+                                </div>
+                                
                         <label for="book-type">Edition  <span>&#42;</span></label>
                         <input id="book-edition" type="text" formControlName="edition" placeholder="2" required>
+                        <div *ngIf="addBookForm.controls['edition'].invalid && (addBookForm.controls['edition'].dirty || addBookForm.controls['edition'].touched)" class="alert">
+                            <div *ngIf="addBookForm.controls['edition'].errors">
+                            Book Edition is required.
+                          </div>
+                        </div>
 
                         <label for="price">Publication date <span>&#42;</span></label>
                         <input id="price" type="number" formControlName="pud" placeholder="02-03-2000" required>
-                
+                        <div *ngIf="addBookForm.controls['pud'].invalid && (addBookForm.controls['pud'].dirty || addBookForm.controls['pud'].touched)" class="alert">
+                            <div *ngIf="addBookForm.controls['pud'].errors">
+                            Publication date is required.
+                          </div>
+                        </div>
+
                         <button type="submit">Add Book</button>
                         </div>
                 </form>
@@ -50,27 +76,32 @@
                 
             </div>
             <div *ngSwitchCase = '1' class="body-item">
-                <h3>Edit Book</h3>
-                <div class="results">
-                    <app-edit-book
-                        *ngFor="let book of bookList" [book3]="book"
-                    ></app-edit-book>
-                </div>
+                <h2>Edit Book</h2>
+                <div class="main-section">
+                    <div class="results">
+                        <app-edit-book
+                            *ngFor="let book of bookList" [book3]="book"
+                        ></app-edit-book>
+                    </div>
+                </div>             
             </div>
             <div *ngSwitchCase = '2' class="body-item">
-                <h3>Delete Book</h3>
-                <div class="results">
-                    <app-delete-book
-                        *ngFor="let book of bookList" [book4]="book"
-                    ></app-delete-book>
+                <h2>Delete Book</h2>
+                <div class="main-section">
+                    <div class="results">
+                        <app-delete-book
+                            *ngFor="let book of bookList" [book4]="book"
+                        ></app-delete-book>
+                    </div>
                 </div>
+                
             </div>
-            <div *ngSwitchCase = '3' class="body-item">
-                <h3>Assign Book</h3>
+            <!-- <div *ngSwitchCase = '3' class="body-item">
+                <h2>Assign Book</h2>
             </div>
             <div *ngSwitchCase = '4' class="body-item">
-                <h3>Return Book</h3>
-            </div>
+                <h2>Return Book</h2>
+            </div> -->
     
         </div>
 

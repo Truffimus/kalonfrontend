@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from 'src/app/interfaces/book';
+import { Borrow } from 'src/app/interfaces/borrow';
 import { BookserviceService } from 'src/app/services/bookservice/bookservice.service';
 import { JWTServiceService } from 'src/app/services/jwtservice/jwtservice.service';
 
@@ -51,9 +52,14 @@ export class ViewbookComponent {
       }
       
       this.bookService.assignBook(booking).subscribe(
-        (res: any) => {
+        (res: Borrow) => {
           console.log(res);
           alert('Book assigned Succesfully')
+
+          this.routes.navigate(['/'])
+          .then(() => {
+              window.location.reload();
+        });
         },
         (error: HttpErrorResponse) => {
           console.log("Error Response " + error.error.message)

@@ -20,27 +20,22 @@ export class DeleteBookComponent {
 
   public deleteBook(bookid: number){
     if(this.jwtService.isLoggedIn()){
-
-      const userEmail = this.jwtService.getEmailId();
-
-      console.log("This is my user email "  + userEmail)
-      console.log("This is the book Id "  + bookid)
-
-      let booking = {
-        bookId: bookid,
-        memberEmail: userEmail,
-      }
       
-      this.bookService.returnBook(booking).subscribe(
-        (res: any) => {
-          console.log(res);
-          alert('Book Returned Succesfully')
-        },
-        (error: HttpErrorResponse) => {
-          console.log("Error Response " + error.error.message)
-          alert('Book Failed to be returned: ' + error.error.message)
-        }
-      )
+        this.bookService.deleteBook(bookid).subscribe(
+          (res: Book) => {
+            console.log("Response " + res)
+    
+            alert('Book Deleted Successfully');
+
+            window.location.reload();
+            
+          },
+          (error: HttpErrorResponse) => {
+            console.log("Error Response " + error.message)
+            alert('Operation Failed')
+          }
+        )
+      
 
     } else { this.routes.navigateByUrl('/login');}
     

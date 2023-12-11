@@ -46,7 +46,17 @@ export class JWTServiceService {
 
     getUserName() {
       this.decodeToken();
-      return this.decodedToken ? this.decodedToken['username'] : '';
+      return this.decodedToken ? this.decodedToken['sub'] : '';
+    }
+
+    getFName() {
+      this.decodeToken();
+      return this.decodedToken ? this.decodedToken['fname'] : '';
+    }
+
+    getLName() {
+      this.decodeToken();
+      return this.decodedToken ? this.decodedToken['lname'] : '';
     }
 
     getUserId() {

@@ -3,13 +3,13 @@
       <h2 class="section-heading">Sign Up</h2>
       <form [formGroup]="registerForm" (submit)="signUp(registerForm)">
         <label for="user-name">Username</label>
-        <input id="user-name" type="text" formControlName="username" placeholder="username or email" required>
+        <input id="user-name" type="text" formControlName="name" placeholder="username" required>
 
         <label for="fname">First Name</label>
-        <input id="fname" type="text" formControlName="fname" placeholder="John" required>
+        <input id="fname" type="text" formControlName="firstName" placeholder="John" required>
 
         <label for="lname">Last Name</label>
-        <input id="lname" type="text" formControlName="lname" placeholder="Doe" required>
+        <input id="lname" type="text" formControlName="lastName" placeholder="Doe" required>
 
         <label for="email">Email</label>
         <input id="email" type="text" formControlName="email" placeholder="johndoe@email.com" required>
