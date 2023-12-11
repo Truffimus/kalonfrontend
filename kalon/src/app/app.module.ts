@@ -5,40 +5,54 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { ViewbookComponent } from './pages/viewbook/viewbook.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { AddbookComponent } from './pages/addbook/addbook.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BorrowedBooksComponent } from './pages/borrowed-books/borrowed-books.component';
-import { AddbookformComponent } from './components/addbookform/addbookform.component';
-
+import { LoginpageComponent } from './pages/loginpage/loginpage.component';
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
+import { BorrowedBookComponent } from './components/borrowed-book/borrowed-book.component';
+import { AdminpageComponent } from './pages/adminpage/adminpage.component';
+import { StyleClassModule } from 'primeng/styleclass';
+import { InputTextModule } from 'primeng/inputtext';
+import { CommonModule } from '@angular/common';
+import { RegisterpageComponent } from './pages/registerpage/registerpage.component';
+import { DeleteBookComponent } from './components/delete-book/delete-book.component';
+import { EditBookComponent } from './components/edit-book/edit-book.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AddbookComponent,
     ViewbookComponent,
     SidebarComponent,
     HomepageComponent,
     BookComponent,
     NavbarComponent,
     BorrowedBooksComponent,
-    AddbookformComponent,
+    LoginpageComponent,
+    BorrowedBookComponent,
+    AdminpageComponent,
+    RegisterpageComponent,
+    DeleteBookComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    CheckboxModule,
+    StyleClassModule,
+    InputTextModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { Book } from 'src/app/interfaces/book';
 import { BookserviceService } from 'src/app/services/bookservice/bookservice.service';
 
@@ -10,13 +10,14 @@ import { BookserviceService } from 'src/app/services/bookservice/bookservice.ser
 export class BorrowedBooksComponent implements OnInit {
   bookList: Book[] = [];
 
-  constructor(private bookService: BookserviceService) {}
+  constructor(private bookService: BookserviceService) {
+  }
   ngOnInit(): void{
     this.getAllBooks();
   }
   
   public getAllBooks() {
-    this.bookService.getAllBooks().subscribe(
+    this.bookService.getBorrowedBooks().subscribe(
       (response: Book[]) => {
         this.bookList = response;
         console.log(response)

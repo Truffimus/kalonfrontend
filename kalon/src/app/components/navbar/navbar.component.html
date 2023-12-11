@@ -11,15 +11,17 @@
     
     <div class="spacer"></div>
     <div class= "menu">
-      <a routerLink="/addBook">
-        <p>Add Book</p>
+      <a routerLink="/admin">
+        <p>Manage Library</p>
       </a>
-      <a routerLink="/assignBook">
-        <p>Assign Book</p>
+      <a routerLink="/borrowedBook">
+        <p>Borrowed Books</p>
       </a>
-      <a routerLink="/returnBook">
-        <p>Return Book</p>
-      </a>
-      <button routerLink="/signin">Sign In</button>
+      <div *ngIf="logged_user; else loggedOut">
+        <button class="profile">P</button>
+      </div>
+      <ng-template #loggedOut>
+        <button routerLink="/login">Sign In</button>
+      </ng-template>
       
 </div>

@@ -1,20 +1,16 @@
 <section class="main-section">
     <img src="assets/image/book1.jpg" alt="Book Cover" class="book-cover">
-    <div class="book-details">
-        <h3 id="title">Title: <b>{{ book.title }}</b></h3>
-
-        <p>Author: {{ book.author }}</p>
+    <div [routerLink]="['/bookDetails', book.id ]">
+        <div class="book-details">
+            <h3 id="title">Title: <b>{{ book.title }}</b></h3>
     
-        <p>Publisher: {{ book.publisher }}</p>
+            <p>Author: {{ book.author }}</p>
+        
+            <p>Publisher: {{ book.publisher }}</p>
+    
+            <button>View</button>
+        </div>
+      
     </div>
-    <form (submit)="onAddBook(titleInput.value, authorInput.value)">
-    <label for="title">Title:</label>
-    <input type="text" id="title" #titleInput required>
-  
-    <label for="author">Author:</label>
-    <input type="text" id="author" #authorInput required>
-  
-    <button type="submit">Add Book</button>
-  </form>
-  
+    
 </section>

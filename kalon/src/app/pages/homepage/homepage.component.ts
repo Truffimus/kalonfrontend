@@ -10,13 +10,14 @@ import { BookserviceService } from 'src/app/services/bookservice/bookservice.ser
 export class HomepageComponent implements OnInit {
   bookList: Book[] = [];
 
-  constructor(private bookService: BookserviceService) {}
+  constructor(private bookService: BookserviceService) {
+  }
   ngOnInit(): void{
     this.getAllBooks();
   }
   
   public getAllBooks() {
-    this.bookService.getAllBooks().subscribe(
+    this.bookService.getAvailableBooks().subscribe(
       (response: Book[]) => {
         this.bookList = response;
         console.log(response)
