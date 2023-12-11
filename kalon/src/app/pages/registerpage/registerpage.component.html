@@ -4,18 +4,43 @@
       <form [formGroup]="registerForm" (submit)="signUp(registerForm)">
         <label for="user-name">Username</label>
         <input id="user-name" type="text" formControlName="name" placeholder="username" required>
+        <div *ngIf="registerForm.controls['name'].invalid && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)" class="alert">
+          <div *ngIf="registerForm.controls['name'].errors">
+          Username is required.
+        </div>
+      </div>
 
         <label for="fname">First Name</label>
         <input id="fname" type="text" formControlName="firstName" placeholder="John" required>
+        <div *ngIf="registerForm.controls['firstName'].invalid && (registerForm.controls['firstName'].dirty || registerForm.controls['firstName'].touched)" class="alert">
+          <div *ngIf="registerForm.controls['firstName'].errors">
+          First name is required.
+        </div>
+        </div>
 
         <label for="lname">Last Name</label>
         <input id="lname" type="text" formControlName="lastName" placeholder="Doe" required>
+        <div *ngIf="registerForm.controls['lastName'].invalid && (registerForm.controls['lastName'].dirty || registerForm.controls['lastName'].touched)" class="alert">
+          <div *ngIf="registerForm.controls['lastName'].errors">
+          Last name is required.
+        </div>
+        </div>
 
         <label for="email">Email</label>
         <input id="email" type="text" formControlName="email" placeholder="johndoe@email.com" required>
+        <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)" class="alert">
+          <div *ngIf="registerForm.controls['email'].errors">
+          Email is required.
+        </div>
+        </div>
 
         <label for="password">Password</label>
         <input id="password" type="password" formControlName="password" placeholder="" required>
+        <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)" class="alert">
+          <div *ngIf="registerForm.controls['password'].errors">
+          Password is required.
+        </div>
+        </div>
         
         <button type="submit">Sign Up</button>
       </form>

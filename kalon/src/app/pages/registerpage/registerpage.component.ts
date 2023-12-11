@@ -16,25 +16,61 @@ export class RegisterpageComponent {
   constructor(private authService: AuthserviceService, private jwtService: JWTServiceService, private routes: Router) {}
   
   registerForm = new FormGroup({
-    name: new FormControl(''),
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl('')
+    name: new FormControl('', 
+    [ Validators.required,
+      Validators.minLength(3),
+  ]),
+    firstName: new FormControl(
+      '', 
+    [ Validators.required,
+      Validators.minLength(4),
+  ]),
+    lastName: new FormControl(
+      '', 
+      [ Validators.required,
+        Validators.minLength(4),
+    ]
+    ),
+    email: new FormControl(
+      '', 
+      [ Validators.required,
+        Validators.minLength(4),
+    ]
+    ),
+    password: new FormControl(
+      '', 
+      [ Validators.required,
+        Validators.minLength(6),
+    ]
+    )
   });
 
   signUp(registerForm: FormGroup) {
     console.log("Request values " + registerForm.value )
+
+    if( this.registerForm.controls.name.valid && 
+        this.registerForm.controls.firstName.valid && 
+        this.registerForm.controls.lastName.valid && 
+        this.registerForm.controls.email.valid &&
+        this.registerForm.controls.password.valid) {
     this.authService.registerUser(registerForm.value).subscribe(
       (res: User) => {
         console.log(res)
         alert('User registered Successful')
+
+        this.routes.navigate(['/login'])
+          .then(() => {
+              window.location.reload();
+        });
       },
       (error: HttpErrorResponse) => {
         console.log(error.message);
         alert('User registration failed' + error.message);
       }
     )
+  } else {
+    alert("Kindly fill in peronal details correctly")
   }
 
+}
 }

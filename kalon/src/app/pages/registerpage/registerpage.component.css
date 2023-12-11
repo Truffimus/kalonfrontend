@@ -59,6 +59,10 @@
     color: grey;
   }
 
+  .alert{
+    color: rgba(255, 0, 0, 0.89);
+  }
+
   button{
     width: 300px;
     height: 36px;
